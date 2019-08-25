@@ -5,14 +5,14 @@ require('@babel/register')({
   ]
 })
 
-const app = require('./api')
+const appStart = require('./api').default
 
-module.exports.start = (port) => {
-  app.listen(port, '0.0.0.0', (err) => {
+module.exports.start = (port, conf) => {
+  appStart(conf).listen(port, '0.0.0.0', (err) => {
     if (err) {
       console.log(err)
     }
-    console.info(`==> listening on http://localhost:${PORT}.`)
+    console.info(`==> listening on http://localhost:${port}.`)
   })
 }
 

@@ -1,12 +1,4 @@
-const { strictEqual } = require('assert')
-
-module.exports.config = (email, domain, mailgunKey, to, serviceKey) => {
-  strictEqual(typeof email, 'string')
-  strictEqual(typeof mailgunKey, 'string')
-  strictEqual(typeof to, 'string')
-  strictEqual(typeof domain, 'string')
-  strictEqual(typeof serviceKey, 'string')
-
+module.exports = (email, domain, mailgunKey, to, serviceKey) => {
   return {
     tlsEmail: email,
     domainName: domain,

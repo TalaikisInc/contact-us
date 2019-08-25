@@ -1,13 +1,6 @@
-import { strictEqual } from 'assert'
-
-import { config } from '../config'
 import { request } from '../utils'
 
-strictEqual(typeof config().domainName, 'string')
-strictEqual(typeof config().apiKey, 'string')
-strictEqual(typeof config().emailTo, 'string')
-
-const sendMailgunEmail = (email, subject, msg, callback) => {
+const sendMailgunEmail = (email, subject, msg, conf, callback) => {
   const validemail = typeof email === 'string' && email.indexOf('@') > -1 ? email : false
   const validMsg = typeof msg === 'string' && msg.trim().length > 0 ? msg.trim() : false
 
@@ -18,11 +11,11 @@ const sendMailgunEmail = (email, subject, msg, callback) => {
       protocol: 'https:',
       hostname: 'api.mailgun.net',
       method: 'POST',
-      path: `/v3/${config.domainName}/messages`,
-      auth: `api:${config.apiKey}`,
+      path: `/v3/${conf.domainName}/messages`,
+      auth: `api:${conf.apiKey}`,
       data: {
         from: email,
-        to: config.emailTo,
+        to: conf.emailTo,
         subject: subject,
         text: msg,
         html: htmlMsg
