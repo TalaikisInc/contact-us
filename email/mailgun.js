@@ -3,9 +3,9 @@ import { strictEqual } from 'assert'
 import { config } from '../config'
 import { request } from '../utils'
 
-strictEqual(typeof config.domainName, 'string')
-strictEqual(typeof config.apiKey, 'string')
-strictEqual(typeof config.emailTo, 'string')
+strictEqual(typeof config().domainName, 'string')
+strictEqual(typeof config().apiKey, 'string')
+strictEqual(typeof config().emailTo, 'string')
 
 const sendMailgunEmail = (email, subject, msg, callback) => {
   const validemail = typeof email === 'string' && email.indexOf('@') > -1 ? email : false
