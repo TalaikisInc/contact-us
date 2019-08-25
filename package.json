@@ -1,0 +1,62 @@
+{
+  "name": "@talaikis/contact-us",
+  "version": "1.1.0",
+  "description": "Contact us API service.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "compile": "cross-env NODE_ENV=production  ncc build index.js -o dist",
+    "publish": " npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TalaikisInc/contact-us"
+  },
+  "author": "Tadas Talaikis <info@talaikis.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "cross-env": "^5.2.0",
+    "express": "^4.17.1",
+    "frenchkiss": "^0.2.1",
+    "legit": "^1.0.5"
+  },
+  "keywords": [
+    "conact",
+    "service",
+    "mail",
+    "mailgun",
+    "node",
+    "nodejs"
+  ],
+  "bugs": {
+    "url": "https://github.com/TalaikisInc/contact-us/issues"
+  },
+  "homepage": "https://talaikis.com",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "core-js": "^3.2.1",
+    "eslint": "^6.2.2",
+    "faker": "^4.1.0",
+    "husky": "^3.0.4",
+    "mocha": "^6.2.0",
+    "request": "^2.88.0",
+    "sinon": "^7.4.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test",
+      "pre-push": "npm run test"
+    }
+  },
+  "directories": {
+    "test": "test"
+  }
+}

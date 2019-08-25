@@ -1,0 +1,26 @@
+{
+  "contactus": {
+    "success": {
+      "res": {
+        "statusCode": 200,
+        "headers": {
+          "content-type": "application/json"
+        }
+      },
+      "body": {
+        "status": "sent"
+      }
+    },
+    "failure": {
+      "res": {
+        "statusCode": 403,
+        "headers": {
+          "content-type": "application/json"
+        }
+      },
+      "body": {
+        "status": "error"
+      }
+    }
+  }
+}
