@@ -1,13 +1,13 @@
 {
   "name": "@talaikis/contact-us",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Contact us API service.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "mocha test/",
     "start": "cross-env NODE_ENV=production node index.js",
     "compile": "cross-env NODE_ENV=production  ncc build index.js -o dist",
-    "publish": " npm publish --access public"
+    "publish": "npm publish --access public"
   },
   "repository": {
     "type": "git",
@@ -52,7 +52,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test",
+      "pre-commit": "npm run test && npm run compile",
       "pre-push": "npm run test"
     }
   },

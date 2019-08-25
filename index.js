@@ -5,6 +5,8 @@ require('@babel/register')({
   ]
 })
 
+const app = require('./api')
+
 module.exports.start = (port) => {
   app.listen(port, '0.0.0.0', (err) => {
     if (err) {
@@ -14,5 +16,4 @@ module.exports.start = (port) => {
   })
 }
 
-module.exports = require('./api.js')
 module.exports.config = require('./config.js')
