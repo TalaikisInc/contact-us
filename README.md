@@ -24,9 +24,11 @@ npm i -S @talaikis/contact-us
 import { start, config } from '@talaikis/contact-us'
 // config(email, mailgunDomain, mailgunKey, recipient, serviceKey)
 // for example:
-config('test@test.com', 'talaikis.com', 'key-XXXXX', 'test2@test.com', 'blahblah')
-start(3000) // <- port
+const conf = config('test@test.com', 'talaikis.com', 'key-XXXXX', 'test2@test.com', 'blahblah')
+start(3000, conf) // <- port
 ```
+
+That's it, you can go to `http://localhost:3000/ping`
 
 ## Sample request
 
